@@ -72,5 +72,16 @@
     });
 
 
+    // vertical-slider
+    $('.vertical-slider').slick({
+      slidesToShow: 2,
+      slidesToScroll: 2,
+      centerMode: false,
+      focusOnSelect: true,
+      vertical: true,
+      arrows: true,
+      autoplay:false,
+    });
+
     
 })(jQuery);
