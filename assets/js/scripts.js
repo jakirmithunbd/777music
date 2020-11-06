@@ -73,6 +73,16 @@
 
 
     // vertical-slider
+    // $('.vertical-slider').slick({
+    //   slidesToShow: 2,
+    //   slidesToScroll: 2,
+    //   centerMode: false,
+    //   focusOnSelect: true,
+    //   vertical: true,
+    //   arrows: true,
+    //   autoplay:false,
+    // });
+
     $('.vertical-slider').slick({
       slidesToShow: 2,
       slidesToScroll: 2,
@@ -81,7 +91,30 @@
       vertical: true,
       arrows: true,
       autoplay:false,
-    });
 
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            vertical: false,
+          }
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            
+          }
+        }
+        // You can unslick at a given breakpoint now by adding:
+        // settings: "unslick"
+        // instead of a settings object
+      ]
+    });
     
 })(jQuery);

@@ -252,15 +252,42 @@
 
 
 }
-@media only screen and (max-width: 991px){
 
-    .vertical-slider {
-        
-        .slick-next {
-            top: 578px;
+@media only screen and (max-width: 1023px){
+
+    // artiste area 
+
+    .artiste-area {
+        .col-sm-6 {
+            width: 100%;
+
+            .vertical-slider{
+                padding: 40px 40px 0;
+
+                .slick-prev {
+                    display: block !important;
+
+                    &::before {
+                        content: "V";
+                        color: #69C730;
+                        font-size: 18px;
+                        font-weight: 700;
+                        font-family: "Open Sans";
+                        padding: 16px 22px;
+                        background: #ffffff;
+                        border-radius: 500px;
+                    }
+                }
+                .slick-next {
+                    right: 0;
+                    top: calc(50% - 60px);
+
+                }
+            }
         }
-       
     }
+}
+.vertical-slider .slick-next:before {
     
 }
 
@@ -347,9 +374,7 @@
     .event-btn {
         padding: 40px 0;
     }
-    .vertical-slider{
-        padding-top: 40px;
-    }
+    
 
 }
 
