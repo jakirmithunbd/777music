@@ -571,10 +571,10 @@ button {
 
                 &>a {
                     color: $primary;
-                    @include em(14px, 100, 20px);
-                    font-weight: 400;
-                    font-family: $open;
-                    padding: 25px 40px;
+                    font-size: 8px;
+                    font-weight: 700;
+                    font-family: $lulo;
+                    padding: 25px 36px;
                     text-transform: uppercase;
                     transition: all .3s ease;
 
@@ -1685,6 +1685,17 @@ button {
 .listen-title {
     padding-top: 160px;
 }
+.events-title {
+    padding-top: 66px;
+}
+.events {
+    display: flex;
+    justify-content: center;
+}
+.event-btn{
+    padding: 50px 0 77px;
+}
+
 .vertical-slider {
     .slick-list {
         height: 800px !important;
@@ -1695,10 +1706,10 @@ button {
     }
     .slick-next {
         right: calc(50% - 29px);
-        top: 400px;
+        top: 395px;
 
         &:before {
-            content: "A";
+            content: "V";
             color: #69C730;
             font-size: 18px;
             font-weight: 700;
@@ -1709,7 +1720,7 @@ button {
         }
     }
     .vertical-slider-item {
-        padding:6px 0;
+        padding-bottom: 12px;
 
     }
 }

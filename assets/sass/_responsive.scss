@@ -1,4 +1,15 @@
+@media only screen and (max-width: 1280px) {
+    .artiste-content {
 
+        .artste-title {
+
+            .artiste-flag {
+                left: -65px;
+            }
+        }
+    }
+
+}
 
 @media only screen and (max-width: 1199px) {
 
@@ -22,6 +33,16 @@
                 a {
                     @include em(20px, -50, 30px);
                 }
+            }
+        }
+    }
+    .artiste-content {
+
+        .artste-title {
+
+            .artiste-flag {
+                position: inherit;
+                padding-left: 70px;
             }
         }
     }
@@ -179,6 +200,7 @@
                 }
             }
         }
+
     }
 
     // section-title
@@ -212,7 +234,34 @@
     .footer{
         padding-left: 115px;
     }
+   
 
+      // artiste page
+      .padding-95 {
+        padding-bottom: 60px;
+    }
+    .listen-title {
+        padding-top: 60px;
+    }
+    .events-title {
+        padding-top: 40px;
+    }
+    .event-btn {
+        padding: 50px 0 50px;
+    }
+
+
+}
+@media only screen and (max-width: 991px){
+
+    .vertical-slider {
+        
+        .slick-next {
+            top: 578px;
+        }
+       
+    }
+    
 }
 
 @media only screen and (max-width: 767px) {
@@ -287,6 +336,21 @@
         }
         
     }
+
+    // artiste page 
+    .padding-95 {
+        padding-bottom: 40px;
+    }
+    .listen-title {
+        padding-top: 40px;
+    }
+    .event-btn {
+        padding: 40px 0;
+    }
+    .vertical-slider{
+        padding-top: 40px;
+    }
+
 }
 
 @media only screen and (max-width: 640px) {
@@ -321,6 +385,14 @@
             padding: 18px 22px 30px 22px!important;
         }
     
+    }
+
+    // artiste age 
+    .padding-95 {
+        padding: 30px 0;
+    }
+    .event-btn {
+        padding: 30px 0;
     }
     
 }

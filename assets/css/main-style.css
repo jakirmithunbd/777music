@@ -627,12 +627,10 @@ button:hover, button:focus, button:active:focus {
 }
 .header .navbar .navbar-nav > li > a {
   color: #70CE35;
-  font-size: 0.875em;
-  letter-spacing: 0.1em;
-  line-height: 1.4285714286;
-  font-weight: 400;
-  font-family: "Open Sans", sans-serif;
-  padding: 25px 40px;
+  font-size: 8px;
+  font-weight: 700;
+  font-family: "LuloCleanW01-OneBold", sans-serif;
+  padding: 25px 36px;
   text-transform: uppercase;
   transition: all 0.3s ease;
 }
@@ -1524,6 +1522,19 @@ button:hover, button:focus, button:active:focus {
   padding-top: 160px;
 }
 
+.events-title {
+  padding-top: 66px;
+}
+
+.events {
+  display: flex;
+  justify-content: center;
+}
+
+.event-btn {
+  padding: 50px 0 77px;
+}
+
 .vertical-slider .slick-list {
   height: 800px !important;
 }
@@ -1532,10 +1543,10 @@ button:hover, button:focus, button:active:focus {
 }
 .vertical-slider .slick-next {
   right: calc(50% - 29px);
-  top: 400px;
+  top: 395px;
 }
 .vertical-slider .slick-next:before {
-  content: "A";
+  content: "V";
   color: #69C730;
   font-size: 18px;
   font-weight: 700;
@@ -1545,10 +1556,15 @@ button:hover, button:focus, button:active:focus {
   border-radius: 500px;
 }
 .vertical-slider .vertical-slider-item {
-  padding: 6px 0;
+  padding-bottom: 12px;
 }
 
 /**---- Responsive CSS ----**/
+@media only screen and (max-width: 1280px) {
+  .artiste-content .artste-title .artiste-flag {
+    left: -65px;
+  }
+}
 @media only screen and (max-width: 1199px) {
   /* Widgets Design */
   .widget {
@@ -1569,6 +1585,11 @@ button:hover, button:focus, button:active:focus {
     font-size: 1.25em;
     letter-spacing: -0.05em;
     line-height: 1.5;
+  }
+
+  .artiste-content .artste-title .artiste-flag {
+    position: inherit;
+    padding-left: 70px;
   }
 }
 @media only screen and (max-width: 1090px) {
@@ -1712,6 +1733,27 @@ button:hover, button:focus, button:active:focus {
   .footer {
     padding-left: 115px;
   }
+
+  .padding-95 {
+    padding-bottom: 60px;
+  }
+
+  .listen-title {
+    padding-top: 60px;
+  }
+
+  .events-title {
+    padding-top: 40px;
+  }
+
+  .event-btn {
+    padding: 50px 0 50px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .vertical-slider .slick-next {
+    top: 578px;
+  }
 }
 @media only screen and (max-width: 767px) {
   .left-side-menu .navbar-nav li a {
@@ -1752,6 +1794,22 @@ button:hover, button:focus, button:active:focus {
   .youtube-news .news-side {
     padding: 25px 22px 55px 30px !important;
   }
+
+  .padding-95 {
+    padding-bottom: 40px;
+  }
+
+  .listen-title {
+    padding-top: 40px;
+  }
+
+  .event-btn {
+    padding: 40px 0;
+  }
+
+  .vertical-slider {
+    padding-top: 40px;
+  }
 }
 @media only screen and (max-width: 575px) {
   .right-side-content {
@@ -1778,6 +1836,14 @@ button:hover, button:focus, button:active:focus {
   }
   .youtube-news .news-side {
     padding: 18px 22px 30px 22px !important;
+  }
+
+  .padding-95 {
+    padding: 30px 0;
+  }
+
+  .event-btn {
+    padding: 30px 0;
   }
 }
 @media only screen and (max-width: 420px) {
