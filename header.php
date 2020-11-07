@@ -24,59 +24,71 @@
     $logo = get_field('logo', 'options');
     ?>
 
-    <header class="header">
-        <nav class="navbar">
-            <div class="container-fluid">
-                <div class="navbar-wrapper">
-                    <div class="navbar-header">
+    <div class="main-content-wrapper">
+        <div class="container-fluid">
+            <div class="left-side-menu">
+                 <?php if (function_exists('wp_nav_menu')): ?>
+                    <?php wp_nav_menu( 
+                            array(
+                            'menu'               => 'Left side Menu',
+                            'theme_location'     => 'menu-1',
+                            'depth'              => 3,
+                            'container'          => 'false',
+                            'menu_class'         => 'nav navbar-nav',
+                            'menu_id'            => '',
+                            'fallback_cb'        => 'wp_bootstrap_navwalker::fallback',
+                            'walker'             => new wp_bootstrap_navwalker()
+                            ) 
+                        ); 
+                    ?>
+                <?php endif; ?>
 
-                        <div class="navbar-brand">
-                            <a href="<?php echo site_url(); ?>"><img src="<?php echo $logo; ?>" class="img-responsive" alt="Logo Image"></a>
-                        </div><!-- / Logo  -->
-
-                        <a href="#sidr" class="openMenu navbar-toggle collapsed">
-                            <span class="fas fa-bars"></span>
-                        </a>
-
-                    </div>
-                                           
-                    <div id="sidr" class="collapse navbar-collapse">
-                        <?php if (function_exists('wp_nav_menu')): ?>
-                            <?php wp_nav_menu( 
-                                  array(
-                                  'menu'               => 'Language Menu',
-                                  'theme_location'     => 'menu-2',
-                                  'depth'              => 3,
-                                  'container'          => 'false',
-                                  'menu_class'         => 'text-right list-unstyle list-inline language-menu',
-                                  'menu_id'            => '',
-                                  'fallback_cb'        => 'wp_bootstrap_navwalker::fallback',
-                                  'walker'             => new wp_bootstrap_navwalker()
-                                  ) 
-                                ); 
-                            ?>
-                        <?php endif; ?>
-                        <span class="fas fa-long-arrow-alt-right closeMenu hidden"></span>
-                        <?php if (function_exists('wp_nav_menu')): ?>
-                            <?php wp_nav_menu( 
-                                  array(
-                                  'menu'               => 'Main Menu',
-                                  'theme_location'     => 'menu-1',
-                                  'depth'              => 3,
-                                  'container'          => 'false',
-                                  'menu_class'         => 'nav navbar-nav',
-                                  'menu_id'            => '',
-                                  'fallback_cb'        => 'wp_bootstrap_navwalker::fallback',
-                                  'walker'             => new wp_bootstrap_navwalker()
-                                  ) 
-                                ); 
-                            ?>
-                        <?php endif; ?>
-                    </div>
+                <div class="toggle-menu-bar">
+                    <span class="fas fa-chevron-right"></span>
                 </div>
             </div>
-        </nav><!-- / navigation  -->
-    </header><!-- / Header Area  -->
-    <!-- <div class="header_gutter"></div> -->
 
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="right-side-content">
+
+                        <header class="header">
+                            <nav class="navbar">
+                                <div class="container">
+                                    <div class="navbar-wrapper">
+                                        <div class="navbar-header">
+                    
+                                            <div class="navbar-brand">
+                                                <a href="<?php echo site_url(); ?>"><img src="<?php echo $logo; ?>" class="img-responsive" alt="Logo Image"></a>
+                                            </div><!-- / Logo  -->
+                    
+                                            <a href="#sidr" class="openMenu navbar-toggle collapsed">
+                                                <span class="fas fa-bars"></span>
+                                            </a>
+                    
+                                        </div>
+                                                               
+                                        <div id="sidr" class="collapse navbar-collapse">
+                                            <span class="fas fa-long-arrow-alt-right closeMenu hidden"></span>
+                                            <?php if (function_exists('wp_nav_menu')): ?>
+                                                <?php wp_nav_menu( 
+                                                    array(
+                                                    'menu'               => 'Top Menu',
+                                                    'theme_location'     => 'menu-2',
+                                                    'depth'              => 3,
+                                                    'container'          => 'false',
+                                                    'menu_class'         => 'nav navbar-nav',
+                                                    'menu_id'            => '',
+                                                    'fallback_cb'        => 'wp_bootstrap_navwalker::fallback',
+                                                    'walker'             => new wp_bootstrap_navwalker()
+                                                    ) 
+                                                    ); 
+                                                ?>
+                                            <?php endif; ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </nav><!-- / navigation  -->
+                        </header><!-- / Header Area  -->
     

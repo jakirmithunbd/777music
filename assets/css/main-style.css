@@ -866,11 +866,17 @@ button:hover, button:focus, button:active:focus {
   cursor: pointer;
   background: #FEDD00;
 }
+.left-side-menu .toggle-menu-bar span:hover {
+  background-color: #70CE35;
+}
 .left-side-menu.show_left_sidebar {
   width: 220px;
 }
 .left-side-menu.show_left_sidebar .navbar-nav li a {
   opacity: 1;
+}
+.left-side-menu.show_left_sidebar .toggle-menu-bar span {
+  transform: rotate(180deg);
 }
 
 .footer {
@@ -1411,24 +1417,32 @@ button:hover, button:focus, button:active:focus {
 }
 
 .youtube-news {
-  margin-left: 130px;
-  margin-right: 15px;
+  margin-left: 115px;
 }
 .youtube-news .padding-0 {
   padding: 0;
 }
 .youtube-news .padding-0 .youtube-side {
   background: #FEDD00;
-  padding: 35px 0 67px 470px;
+  height: 100%;
+}
+.youtube-news .padding-0 .youtube-side .youtube-title {
+  margin-left: 30px;
 }
 .youtube-news .padding-0 .youtube-side .youtube-title h2 {
   color: #70CE35;
+}
+.youtube-news .padding-0 .youtube-video iframe {
+  width: 100%;
 }
 .youtube-news .padding-0 .news-side {
   background: #7460A2;
   padding: 35px 0 67px 47px;
 }
 
+.footer {
+  margin-left: 115px;
+}
 .footer .contact-form-wrapper {
   display: flex;
   align-items: center;
@@ -1517,6 +1531,14 @@ button:hover, button:focus, button:active:focus {
   top: calc(50% - 43px);
   left: -90px;
 }
+.artiste-content .social-icon a {
+  margin-right: 13px;
+  color: #9B9B9B;
+  transition: all 0.3s ease;
+}
+.artiste-content .social-icon a:hover, .artiste-content .social-icon a:focus {
+  color: #70CE35;
+}
 
 .listen-title {
   padding-top: 160px;
@@ -1543,20 +1565,30 @@ button:hover, button:focus, button:active:focus {
 }
 .vertical-slider .slick-next {
   right: calc(50% - 29px);
-  top: 395px;
+  top: 483px;
 }
 .vertical-slider .slick-next:before {
-  content: "V";
+  content: "";
   color: #69C730;
-  font-size: 18px;
+  font-size: 24px;
   font-weight: 700;
-  font-family: "Open Sans";
-  padding: 16px 22px;
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.4);
+  height: 49px;
+  display: flex;
+  font-weight: 900;
+  align-items: center;
+  justify-content: center;
   border-radius: 500px;
+  width: 49px;
+  font-family: "Font Awesome 5 Free";
+  transform: rotate(90deg);
 }
 .vertical-slider .vertical-slider-item {
   padding-bottom: 12px;
+}
+
+.page-template-t_publishing .artist-wrapper {
+  margin-bottom: 45px;
 }
 
 /**---- Responsive CSS ----**/

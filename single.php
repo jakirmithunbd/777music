@@ -13,24 +13,27 @@
     <div class="container-fluid">   
         <div class="row">
             <div class="col-md-7 col-sm-7 col-xs-12">
-                <?php 
+                <?php if ( have_posts() ) :
+                    while ( have_posts() ) : the_post();
+                        ?>
+                        <div class="post">
+                            <h2 class="post-title"><?php the_title(); ?></h2>
 
-                while(have_posts()) : the_post() ; ?>
-                    <div class="post">
-                        <h2 class="post-title"><?php the_title(); ?></h2>
+                            <div class="data">
+                                <p><span class="far fa-clock"></span><?php echo get_the_date(); ?> </p>
+                                <p class="author"> <?php _e('by', 'dakota'); ?> <?php the_author(); ?></p>
+                            </div>
 
-                        <div class="data">
-                            <p><span class="far fa-clock"></span><?php echo get_the_date(); ?> </p>
-                            <p class="author"> <?php _e('by', 'dakota'); ?> <?php the_author(); ?></p>
+                            <?php if (has_post_thumbnail()): ?>
+                                <?php the_post_thumbnail(null, array('class'=> 'img-responsive')); ?>
+                            <?php endif; ?>
+                            <?php the_content(); ?>
                         </div>
-
-                        <?php if (has_post_thumbnail()): ?>
-                            <?php the_post_thumbnail(null, array('class'=> 'img-responsive')); ?>
-                        <?php endif; ?>
-                        <?php the_content(); ?>
-                    </div>
-                    
-                <?php endwhile; wp_reset_postdata(); ?>
+                        <?php
+                    endwhile;
+                else :
+                    _e( 'Sorry, no posts were found.', 'textdomain' );
+                endif; ?>
 
                 <div class="post-comments">
                     <?php 

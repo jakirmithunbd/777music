@@ -2,9 +2,8 @@
 //show_admin_bar(false);
 
 require_once get_theme_file_path("/inc/wp-bootstrap-navwalker.php");
-require_once get_theme_file_path("/inc/web-login-page-design.php");
 
-function web_setup_theme(){
+function music_setup_theme(){
 	add_theme_support('title-tag');
 	add_theme_support('post-thumbnails');
 	add_theme_support('custom-header');
@@ -19,16 +18,16 @@ function web_setup_theme(){
 	// Menu Register 
 	if(function_exists('register_nav_menus')){
     	register_nav_menus(array(
-          'menu-1'	=>	__('Main Left Menu', 'web'),
-          'menu-2'  =>  __('Main Right Menu', 'web'),
-          'menu-3'  =>  __('Footer Menu', 'web'),
+          'menu-1'	=>	__('Left side Menu', 'music'),
+          'menu-2'  =>  __('Top Menu', 'music'),
+          'menu-3'  =>  __('Footer Menu', 'music'),
 		));
 	}
 }
 
-add_action('after_setup_theme', 'web_setup_theme');
+add_action('after_setup_theme', 'music_setup_theme');
 
-function web_setup_assets(){
+function music_setup_assets(){
 	wp_enqueue_script('jquery');
 	wp_enqueue_script('dashicon');
 
@@ -65,13 +64,13 @@ function web_setup_assets(){
 
 	//css ===
 	wp_enqueue_style('bootstrap_css', get_theme_file_uri('/assets/css/bootstrap.min.css'));
-	wp_enqueue_style('font-awesome', get_theme_file_uri('/assets/css/font-awesome.min.css'));
+	wp_enqueue_style('font-awesome', get_theme_file_uri('/assets/css/all.css'));
     wp_enqueue_style('animate', get_theme_file_uri('/assets/css/animate.min.css'));
     wp_enqueue_style('slick', get_theme_file_uri('/assets/css/slick.min.css'));
 	wp_enqueue_style('main_style', get_theme_file_uri('/assets/css/main-style.css'), null, time());
 	wp_enqueue_style('tay_style', get_stylesheet_uri(), null, time());
 }
-add_action('wp_enqueue_scripts', 'web_setup_assets');
+add_action('wp_enqueue_scripts', 'music_setup_assets');
 
 /**
  * Dashboard google map api key support.
@@ -132,13 +131,15 @@ function getPageID() {
   	return $postid;
 }
 
-function web_acf_admin_head() {
+function music_acf_admin_head() {
     ?>
     <style type="text/css">
 
     #acf-group_5a2badeb476ba.postbox.acf-postbox .hndle.ui-sortable-handle {
         background-color: #1AB569 !important;
         padding: 35px;
+        font-size: 40px;
+        color: #fff;
     }
 
     #acf-group_5a2badeb476ba.postbox.acf-postbox .hndle.ui-sortable-handle span {
@@ -150,25 +151,25 @@ function web_acf_admin_head() {
     <?php
 }
 
-add_action('acf/input/admin_head', 'web_acf_admin_head');
+add_action('acf/input/admin_head', 'music_acf_admin_head');
 
 /**
  * Register widget area.
  *
  * 
  */
-function web_widgets_init() {
+function music_widgets_init() {
     register_sidebar( array(
-        'name'          => esc_html__( 'Sidebar', 'web' ),
+        'name'          => esc_html__( 'Sidebar', 'music' ),
         'id'            => 'sidebar-1',
-        'description'   => esc_html__( 'Add widgets here.', 'web' ),
+        'description'   => esc_html__( 'Add widgets here.', 'music' ),
         'before_widget' => '<section id="%1$s" class="widget %2$s">',
         'after_widget'  => '</section>',
         'before_title'  => '<h2 class="widget-title">',
         'after_title'   => '</h2>',
     ) );
 }
-add_action( 'widgets_init', 'web_widgets_init' );
+add_action( 'widgets_init', 'music_widgets_init' );
 
 
 function add_file_types_to_uploads($file_types){
@@ -222,20 +223,20 @@ add_filter( 'get_search_form', 'my_search_form', 100 );
 
 
 // Global Offices
-add_action('init','webone_services_post_type');
-function webone_services_post_type() {
-    register_post_type( 'services',
+add_action('init','music_artist_post_type');
+function music_artist_post_type() {
+    register_post_type( 'artist',
         array(
         'labels' =>
         array(
-            'name' => __( 'Services', 'web'),  
-            'singular_name' => __( 'Service', 'web'),
-            'add_new_item' => __('Add New Service', 'web'), 
-            'add_new' => __( 'Add New Service', 'web'),
-            'edit_item' => __( 'Edit Service', 'web'),
-            'new_item' => __( 'New Service', 'web' ),
-            'view_item' => __( 'View Service' ),
-            'not_found' => __( 'Sorry, we couldn\'t find the Service you are looking for.',  'web' ),
+            'name' => __( 'Artists', 'music'),  
+            'singular_name' => __( 'Artist', 'music'),
+            'add_new_item' => __('Add New Artist', 'music'), 
+            'add_new' => __( 'Add New Artist', 'music'),
+            'edit_item' => __( 'Edit Artist', 'music'),
+            'new_item' => __( 'New Artist', 'music' ),
+            'view_item' => __( 'View Artist' ),
+            'not_found' => __( 'Sorry, we couldn\'t find the Artist you are looking for.',  'music' ),
         ),
 
         'public' => true,
@@ -247,4 +248,3 @@ function webone_services_post_type() {
     );
 }
 
-}
