@@ -77,7 +77,7 @@ get_header();
                             <h2 class="section-title"data-title="<?php _e('News Feed', 'music') ?>"><?php _e('News Feed', 'music') ?></h2>
                         </div>
                         <div class="news-video">
-                            <img src="<?php echo get_theme_file_uri( '/assets/images/Capture d’écran 2020-10-15 à 10.41.51.jpg' )?>" alt="ig-images">
+                            <?php the_field('twitter_feed'); ?>
                         </div>
                     </div>
                 </div>

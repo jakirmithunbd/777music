@@ -29,4 +29,10 @@ get_header(); ?>
         </div>
     </div>
 
+    </div> <!-- right-side-content -->
+                </div>
+            </div>
+        </div>
+    </div>
+
 <?php get_footer(); ?>

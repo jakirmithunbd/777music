@@ -28,6 +28,11 @@ get_header(); ?>
     </div>
 </div>
 </div>
+
+
+
+</div> <!-- right-side-content -->
+                </div>
             </div>
         </div>
     </div>

@@ -471,23 +471,20 @@ button {
     a {
         font-size: 20px;
         color: #fff;
+        margin: 0 10px;
 
         span {
             transition: all .5s ease;
             color: #fff !important;
-            @include em(20px, 0, 30px);
+            @include em(10px, 0, 30px);
             margin: 0 !important;
         }
 
          &:hover, &:focus {
 
             span {
-                color: $primary !important;
+                color: $secondary !important;
             }
-        }
-
-        &:not(:last-child) {
-            margin: 0 10px;
         }
     }
 }
@@ -531,7 +528,7 @@ button {
     .navbar-wrapper {
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: flex-end;
 
         .navbar-collapse {
             padding-right: 0;
@@ -713,6 +710,16 @@ button {
                     }
                 }
             }
+        }
+    }
+}
+
+.home {
+
+    .header {
+    
+        .navbar-wrapper {
+            justify-content: space-between;
         }
     }
 }
@@ -1513,7 +1520,7 @@ button {
     font-weight: 600;
     line-height: 53px;
     text-transform: uppercase;
-    color: #FEDD00;
+    color: $primary;
     position: relative;
     padding-bottom: 55px;
     z-index: 1;
@@ -1576,6 +1583,7 @@ button {
         .news-side {
             background: #7460A2;
             padding: 35px 0 67px 47px;
+            height: 100%;
         }
     }
 }
@@ -1583,7 +1591,11 @@ button {
 // footer
 
 .footer {
-    margin-left: 115px;
+    padding: 40px 0; 
+
+    .container {
+        max-width: 1060px;
+    }
 
     .contact-form-wrapper {
         display: flex;
@@ -1592,6 +1604,7 @@ button {
 
         .contact-form{
             padding-left: 36px;
+            flex-grow: 1;
 
             h2 {
                 font-family: $lulo;
@@ -1599,7 +1612,6 @@ button {
                 font-size: 9px;
                 font-weight: 400;
                 text-transform: uppercase;
-                padding-top: 42px;
                 padding-bottom: 20px;
             }
 
@@ -1628,7 +1640,7 @@ button {
                 }
             } 
 
-            button {
+            .btn {
                 font-family: $open;
                 color: #ffffff;
                 background: transparent;
@@ -1637,6 +1649,28 @@ button {
                 text-transform: uppercase;
                 padding: 6px!important;
                 border: 1px solid #ffffff;
+                max-width: 86px;
+            }
+        }
+
+        &.footer-right {
+            justify-content: flex-end;
+        }
+
+        .footer-menu {
+
+            ul {
+                float: none;
+                
+                li {
+                    float: none;
+                    display: block;
+
+                    a {
+                        @include em(9px, 40, 14px);
+                        color: #fff;
+                    }
+                }
             }
         }
     }
@@ -1773,5 +1807,41 @@ button {
         margin-bottom: 45px;
     }
 }
+
+
+.artist-page {
+    margin-bottom: 50px;
+
+    .artist-list-wrapper {
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: repeat(4, 1fr);
+
+        .artist {
+
+            .artists-list {
+                list-style: none;
+                margin: 30px;
+
+                li {
+
+                    a {
+                        display: block;
+                        color: $primary;
+                        @include em(13px, 0, 17px);
+
+                        img {
+                            border-radius: 500px;
+                            object-fit: cover;
+                            width: 42px;
+                            height: 42px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 /**---- Responsive CSS ----**/
 @import "responsive";

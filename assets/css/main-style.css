@@ -546,20 +546,18 @@ button:hover, button:focus, button:active:focus {
 .social-media a {
   font-size: 20px;
   color: #fff;
+  margin: 0 10px;
 }
 .social-media a span {
   transition: all 0.5s ease;
   color: #fff !important;
-  font-size: 1.25em;
+  font-size: 0.625em;
   letter-spacing: 0em;
-  line-height: 1.5;
+  line-height: 3;
   margin: 0 !important;
 }
 .social-media a:hover span, .social-media a:focus span {
-  color: #70CE35 !important;
-}
-.social-media a:not(:last-child) {
-  margin: 0 10px;
+  color: #FEDD00 !important;
 }
 
 .sidr {
@@ -597,7 +595,7 @@ button:hover, button:focus, button:active:focus {
 .header .navbar-wrapper {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 .header .navbar-wrapper .navbar-collapse {
   padding-right: 0;
@@ -723,6 +721,10 @@ button:hover, button:focus, button:active:focus {
 }
 .header.sticky .navbar .navbar-nav > li > a:after {
   border-color: #FEDD00;
+}
+
+.home .header .navbar-wrapper {
+  justify-content: space-between;
 }
 
 .artist-wrapper {
@@ -1389,7 +1391,7 @@ button:hover, button:focus, button:active:focus {
   font-weight: 600;
   line-height: 53px;
   text-transform: uppercase;
-  color: #FEDD00;
+  color: #70CE35;
   position: relative;
   padding-bottom: 55px;
   z-index: 1;
@@ -1438,10 +1440,14 @@ button:hover, button:focus, button:active:focus {
 .youtube-news .padding-0 .news-side {
   background: #7460A2;
   padding: 35px 0 67px 47px;
+  height: 100%;
 }
 
 .footer {
-  margin-left: 115px;
+  padding: 40px 0;
+}
+.footer .container {
+  max-width: 1060px;
 }
 .footer .contact-form-wrapper {
   display: flex;
@@ -1450,6 +1456,7 @@ button:hover, button:focus, button:active:focus {
 }
 .footer .contact-form-wrapper .contact-form {
   padding-left: 36px;
+  flex-grow: 1;
 }
 .footer .contact-form-wrapper .contact-form h2 {
   font-family: "LuloCleanW01-OneBold", sans-serif;
@@ -1457,7 +1464,6 @@ button:hover, button:focus, button:active:focus {
   font-size: 9px;
   font-weight: 400;
   text-transform: uppercase;
-  padding-top: 42px;
   padding-bottom: 20px;
 }
 .footer .contact-form-wrapper .contact-form .form-group {
@@ -1482,7 +1488,7 @@ button:hover, button:focus, button:active:focus {
   padding: 6px 6px 6px 40px !important;
   border: 1px solid #ffffff;
 }
-.footer .contact-form-wrapper .contact-form button {
+.footer .contact-form-wrapper .contact-form .btn {
   font-family: "Open Sans", sans-serif;
   color: #ffffff;
   background: transparent;
@@ -1491,6 +1497,23 @@ button:hover, button:focus, button:active:focus {
   text-transform: uppercase;
   padding: 6px !important;
   border: 1px solid #ffffff;
+  max-width: 86px;
+}
+.footer .contact-form-wrapper.footer-right {
+  justify-content: flex-end;
+}
+.footer .contact-form-wrapper .footer-menu ul {
+  float: none;
+}
+.footer .contact-form-wrapper .footer-menu ul li {
+  float: none;
+  display: block;
+}
+.footer .contact-form-wrapper .footer-menu ul li a {
+  font-size: 0.5625em;
+  letter-spacing: 0.04em;
+  line-height: 1.5555555556;
+  color: #fff;
 }
 
 .padding-95 {
@@ -1589,6 +1612,32 @@ button:hover, button:focus, button:active:focus {
 
 .page-template-t_publishing .artist-wrapper {
   margin-bottom: 45px;
+}
+
+.artist-page {
+  margin-bottom: 50px;
+}
+.artist-page .artist-list-wrapper {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+}
+.artist-page .artist-list-wrapper .artist .artists-list {
+  list-style: none;
+  margin: 30px;
+}
+.artist-page .artist-list-wrapper .artist .artists-list li a {
+  display: block;
+  color: #70CE35;
+  font-size: 0.8125em;
+  letter-spacing: 0em;
+  line-height: 1.3076923077;
+}
+.artist-page .artist-list-wrapper .artist .artists-list li a img {
+  border-radius: 500px;
+  object-fit: cover;
+  width: 42px;
+  height: 42px;
 }
 
 /**---- Responsive CSS ----**/
@@ -1840,11 +1889,8 @@ button:hover, button:focus, button:active:focus {
     padding: 16px;
   }
 
-  .youtube-news .youtube-side {
-    padding: 25px 22px 55px 30px !important;
-  }
-  .youtube-news .news-side {
-    padding: 25px 22px 55px 30px !important;
+  .youtube-news .padding-0 .youtube-side .youtube-title {
+    margin: 0;
   }
 
   .padding-95 {
@@ -1857,6 +1903,11 @@ button:hover, button:focus, button:active:focus {
 
   .event-btn {
     padding: 40px 0;
+  }
+
+  .footer .contact-form-wrapper.footer-right {
+    padding-top: 30px;
+    justify-content: flex-start;
   }
 }
 @media only screen and (max-width: 575px) {

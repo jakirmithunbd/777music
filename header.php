@@ -68,7 +68,7 @@
                                             </a>
                     
                                         </div>
-                                                               
+                                        <?php if(is_front_page()) : ?>                
                                         <div id="sidr" class="collapse navbar-collapse">
                                             <span class="fas fa-long-arrow-alt-right closeMenu hidden"></span>
                                             <?php if (function_exists('wp_nav_menu')): ?>
@@ -87,6 +87,7 @@
                                                 ?>
                                             <?php endif; ?>
                                         </div>
+                                        <?php endif; ?>
                                     </div>
                                 </div>
                             </nav><!-- / navigation  -->

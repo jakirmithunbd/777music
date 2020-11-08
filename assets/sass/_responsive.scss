@@ -287,9 +287,6 @@
         }
     }
 }
-.vertical-slider .slick-next:before {
-    
-}
 
 @media only screen and (max-width: 767px) {
     .left-side-menu {
@@ -355,13 +352,15 @@
 
     .youtube-news {
        
-        .youtube-side {
-            padding: 25px 22px 55px 30px !important;
-        }
-        .news-side {
-            padding: 25px 22px 55px 30px !important;
-        }
-        
+       .padding-0 {
+
+            .youtube-side {
+
+                .youtube-title {
+                    margin: 0;
+                }
+            }
+       }
     }
 
     // artiste page 
@@ -375,7 +374,17 @@
         padding: 40px 0;
     }
     
+    .footer {
 
+        .contact-form-wrapper{
+
+            &.footer-right {
+                padding-top: 30px;
+                justify-content: flex-start;
+            }
+        }
+    }
+    
 }
 
 @media only screen and (max-width: 640px) {
