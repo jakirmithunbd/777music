@@ -47,6 +47,14 @@
                     </div>
                 </div><!-- col-md-6 -->
             </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="copy-right">
+                        <?php the_field('copy_right', 'options'); ?>
+                    </div>
+                </div>
+            </div>
         </div>
     </footer>
   <?php wp_footer(); ?>

@@ -11,7 +11,7 @@ get_header(); ?>
             <div class="col-md-8 col-sm-6">
                 <div class="about-content">
                     <div class="about-title">
-                        <h2 class="section-title"data-title="<?php the_title(); ?>"><?php the_title(); ?></h2>
+                        <h2 id="about-page-title" class="section-title"data-title="<?php the_title(); ?>"><?php the_title(); ?></h2>
                     </div>
 
                     <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); 

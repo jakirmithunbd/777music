@@ -36,11 +36,8 @@ function music_setup_assets(){
     wp_enqueue_script('wow', get_theme_file_uri('/assets/js/wow.min.js'), array('jquery'), '0.0.1', true);
     wp_enqueue_script('slick', get_theme_file_uri('/assets/js/slick.min.js'), array('jquery'), '0.0.1', true);
     wp_enqueue_script('sidr', get_theme_file_uri('/assets/js/sidr.min.js'), array('jquery'), '0.0.1', true);
-
-    $gmap_api = get_field('google_map_api_key', 'options');
-    $googleapi = "//maps.googleapis.com/maps/api/js?key=$gmap_api";
-    wp_enqueue_script('gmap_api', $googleapi, array(), false, true); 
-    
+    wp_enqueue_script('visible-js', '//cdnjs.cloudflare.com/ajax/libs/jquery-visible/1.2.0/jquery.visible.min.js');
+    wp_enqueue_script('lightbox-js', '//cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js');
 
     wp_enqueue_script('main_js', get_theme_file_uri('/assets/js/scripts.js'), array('jquery'), time(), true);
 
@@ -49,11 +46,6 @@ function music_setup_assets(){
 
   // //localize data 
   $data = array (
-    'map_icon' => $map_icon,
-    'map_zoom' => $map_zoom,
-    'gmap_latitude' => $google_map['lat'],
-    'gmap_longitude' => $google_map['lng'],
-    'gmap_address' => $google_map['address'],
     'site_url'   => get_theme_file_uri(),
     'admin_ajax'   => admin_url( 'admin-ajax.php' ),
   );
@@ -67,18 +59,11 @@ function music_setup_assets(){
 	wp_enqueue_style('font-awesome', get_theme_file_uri('/assets/css/all.css'));
     wp_enqueue_style('animate', get_theme_file_uri('/assets/css/animate.min.css'));
     wp_enqueue_style('slick', get_theme_file_uri('/assets/css/slick.min.css'));
+    wp_enqueue_style('lightbox-css', '//cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css');
 	wp_enqueue_style('main_style', get_theme_file_uri('/assets/css/main-style.css'), null, time());
 	wp_enqueue_style('tay_style', get_stylesheet_uri(), null, time());
 }
 add_action('wp_enqueue_scripts', 'music_setup_assets');
-
-/**
- * Dashboard google map api key support.
- */
-add_filter('acf/settings/google_api_key', function () {
-    $gmap_api = get_field('google_map_api_key', 'options');
-    return $gmap_api;
-});
 
 // acf options page
 if( function_exists('acf_add_options_page') ) {
@@ -193,11 +178,8 @@ function additional_scripts(){
           }
         );
         wow.init();
-        document.getElementById('moar').onclick = function() {
-          var section = document.createElement('section');
-          section.className = 'section--purple wow fadeInDown';
-          this.parentNode.insertBefore(section, this);
-        };
+
+        
     </script>
     <?php
 }

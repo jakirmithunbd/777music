@@ -17,7 +17,14 @@
     <!-- <script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5d12ffe75a6f55001254f3ac&product=inline-share-buttons' async='async'></script> -->
     </head>
     <?php wp_head(); ?>
-    <body <?php body_class(); ?>>
+    <div id="loader">
+        <div class="overlay"></div>
+        <div class="arrow">
+            <img src="<?php echo get_theme_file_uri( '/assets/images/smiley.png' )?>" alt="">
+        </div>
+        <div class="line_yellow"></div>
+    </div>
+    <body <?php body_class('is_loading loading_finish'); ?>>
 
     <?php 
     $queried_object = get_queried_object();

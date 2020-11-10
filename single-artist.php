@@ -9,7 +9,7 @@
                     <div class="artiste-flag">
                         <img src="<?php echo $language['url']; ?>" alt="ig-images">
                     </div>
-                    <h2 class="section-title"data-title="Boy Pablo"><?php the_title(); ?></h2>
+                    <h2 id="artist_-page-title" class="section-title"data-title="<?php the_title(); ?>"><?php the_title(); ?></h2>
                 </div>
 
                 <?php echo get_field('content'); ?>
@@ -25,10 +25,10 @@
 
             <div class="listen">
                 <div class="listen-title artste-title">
-                    <h2 class="section-title"data-title="listen">listen <?php _e('events', 'music'); ?></h2>    
+                    <h2 id="listen_page_title" class="section-title"data-title="listen"> <?php _e('Listen', 'music'); ?></h2>    
                 </div>
                 <div class="listen-ply">
-                    <img src="../assets/images/listen-play.jpg" alt="ig-images">
+                    <?php the_field('spotify'); ?>
                 </div>
             </div> <!-- listen -->
         </div>
@@ -37,8 +37,10 @@
             <div class="vertical-slider">
                 <?php $gallery = get_field('gallery'); if($gallery) : foreach ($gallery as $item) : ?>
                     <div class="vertical-slider-item">
-                        <img src="<?php echo $item['url']; ?>" alt="<?php echo $item['title']; ?>">
-                    </div><!-- vertical-slider-item -->
+                        <a href="<?php echo $item['url']; ?>" data-toggle="lightbox" data-gallery="example-gallery" data-type="image" >
+                            <img src="<?php echo $item['url']; ?>" alt="<?php echo $item['title']; ?>">
+                        </a><!-- vertical-slider-item -->
+                    </div>
                 <?php endforeach; endif; ?>
             </div><!-- vertical-slider -->
         </div>
@@ -49,7 +51,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="events-title artste-title">
-                <h2 class="section-title"data-title="events"><?php _e('events', 'music'); ?></h2>    
+                <h2 id="event_page_title" class="section-title"data-title="events"><?php _e('events', 'music'); ?></h2>    
             </div>
             <div class="events">
                 <?php echo do_shortcode('[bandsintown_events]'); ?>
